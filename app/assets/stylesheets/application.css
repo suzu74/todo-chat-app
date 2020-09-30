@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.header-title {
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  padding: 16px 16px;
+  width: 100%;
+  margin: auto;
+}
+
+.section-title {
+  margin: 30px 30px;
+}
+
+.btn-primary {
+  background-color: #F8BD1C;
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 16px 0;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+	right: 0;
+	bottom: -300px;
+}
+
+input[type="email"],input[type="password"] { 
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 16px 0;
+  background: #F4F4F4;
+  border-radius: 10px;
+}
+
+.field, .actions {
+  margin: 0 30px;
+}
+
+.actions{
+  position: relative;
+  margin: 0 30px;
+}
+
+.flash {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.alert {
+  color: red;
+}
+.notice {
+  color: blue;
+}
