@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 class="section-title">Edit Board</h2>
+	<%= form_with(model: @board, local: true) do |f| %>
+		<div>
+			<%= f.label :name,'Name' %>
+		</div>
+		<div>
+			<%= f.text_field :name, class: "text-field" %>
+		</div>
+		<div>
+			<%= f.label :description,'Description' %>
+		</div>
+		<div>
+			<%= f.text_area :description,class: "text-area" %>
+		</div>
+		<%= f.submit 'Submit', class: 'btn-submit' %>
+	<% end %>
+</div>

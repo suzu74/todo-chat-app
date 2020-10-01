@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="section-title">All Boards</h2>
+
+ <% if @boards.present? %>
+  <% @boards.each do |board| %>
+    <%= link_to board_path(board) do %>
+      <div class="card">
+        <div class="card_content">
+          <div class="card_title">
+            <h3><%= board.name %></h3>
+            <p><%= board.description %></p>
+          </div>
+          <div class="card_detail">
+            <div>
+              <p>cohki0305</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? && current_user.has_written?(board) %>
+      <%= link_to "edit", edit_board_path(board) %>
+      <%= link_to "delete", board_path(board), data: { method: 'delete', confirm: '本当に削除しますか？' } %>
+    <% end %>  
+  <% end %>    
+ <% end %>
+
+  <div class="add-new-borad">
+    <%= link_to new_board_path do %>
+      <p>+ Add new board</p>
+    <% end %>
+  </div>
+</div>
