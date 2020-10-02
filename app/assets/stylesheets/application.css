@@ -29,6 +29,13 @@ a {
   color: gray;
 }
 
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  /* margin-right: 16px; */
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -38,8 +45,15 @@ a {
 }
 
 .header-title {
-  margin-left: 30px;
+  margin-left: 50px;
   font-size: 30px;
+}
+
+.header_avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-left: 50px;
 }
 
 *,
@@ -173,6 +187,16 @@ form {
   position: absolute;
   left: 3%;
   top: 100px;
+}
+
+.board-description {
+  margin-bottom: 30px;
+}
+
+.image-content {
+  position: absolute;
+  left: 3%;
+  top: 150px;
 }
 
 .dropbtn {

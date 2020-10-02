@@ -10,8 +10,10 @@
             <h3><%= board.name %></h3>
           </div>
           <div class="board-detail">
-            <p><%= board.description %></p>
-            <p>cohki0305</p>
+            <p class="board-description"><%= board.description %></p>
+          </div>
+          <div class="image-content">
+            <%= image_tag board.user.avatar_image %>
           </div>
         </div>
         <% if user_signed_in? && current_user.has_written?(board) %>
