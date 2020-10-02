@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="section-title">All Boards</h2>
+
+ <% if @boards.present? %>
+  <% @boards.each do |board| %>
+    <%= link_to board_path(board) do %>
+      <div class="board">
+        <div class="board_content">
+          <div class="board-title">
+            <h3><%= board.name %></h3>
+          </div>
+          <div class="board-detail">
+            <p class="board-description"><%= board.description %></p>
+          </div>
+          <div class="image-content">
+            <%= image_tag board.user.avatar_image %>
+          </div>
+        </div>
+        <% if user_signed_in? && current_user.has_written?(board) %>
+          <div class="board_detail_actions">
+            <div class="dropdown">
+              <%= image_tag 'actions.svg', class: 'dropbtn' %>
+              <div class="dropdown-content mini">
+                <%= link_to "edit", edit_board_path(board) %>
+                <%= link_to "delete", board_path(board), data: { method: 'delete', confirm: '本当に削除しますか？' } %>
+              </div>
+            </div>
+          </div>
+        <% end %> 
+      </div>
+    <% end %> 
+  <% end %>    
+ <% end %>
+
+  <div class="add-new-borad">
+    <%= link_to new_board_path do %>
+      <p>+ Add new board</p>
+    <% end %>
+  </div>
+</div>

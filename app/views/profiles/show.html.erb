@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="section-title">Profile Page</h2>
+  <div class="profile-content">
+    <p><%= current_user&.profile&.nickname %></p>
+    <p><%= current_user&.profile&.introduction %></p>
+    <p><%= image_tag current_user.avatar_image %></p>
+    <p>
+      <%= link_to "Profile Edit", edit_profile_path %>
+    </p>
+  </div>
+</div>
