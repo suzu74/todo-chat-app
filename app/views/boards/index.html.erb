@@ -4,25 +4,29 @@
  <% if @boards.present? %>
   <% @boards.each do |board| %>
     <%= link_to board_path(board) do %>
-      <div class="card">
-        <div class="card_content">
-          <div class="card_title">
+      <div class="board">
+        <div class="board_content">
+          <div class="board-title">
             <h3><%= board.name %></h3>
-            <p><%= board.description %></p>
           </div>
-          <div class="card_detail">
-            <div>
-              <p>cohki0305</p>
-            </div>
+          <div class="board-detail">
+            <p><%= board.description %></p>
+            <p>cohki0305</p>
           </div>
         </div>
+        <% if user_signed_in? && current_user.has_written?(board) %>
+          <div class="board_detail_actions">
+            <div class="dropdown">
+              <%= image_tag 'actions.svg', class: 'dropbtn' %>
+              <div class="dropdown-content mini">
+                <%= link_to "edit", edit_board_path(board) %>
+                <%= link_to "delete", board_path(board), data: { method: 'delete', confirm: '本当に削除しますか？' } %>
+              </div>
+            </div>
+          </div>
+        <% end %> 
       </div>
-    <% end %>
-
-    <% if user_signed_in? && current_user.has_written?(board) %>
-      <%= link_to "edit", edit_board_path(board) %>
-      <%= link_to "delete", board_path(board), data: { method: 'delete', confirm: '本当に削除しますか？' } %>
-    <% end %>  
+    <% end %> 
   <% end %>    
  <% end %>
 

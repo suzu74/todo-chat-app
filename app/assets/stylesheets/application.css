@@ -24,6 +24,11 @@
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: gray;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -68,6 +73,20 @@
 	bottom: -300px;
 }
 
+.btn-submit {
+  background-color: #F8BD1C;
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 16px 0;
+  font-weight: bold;
+  font-size: 20px;
+  /* position: absolute; */
+	right: 0;
+	bottom: 100px;
+}
+
 input[type="email"],input[type="password"] { 
   width: 100%;
   margin-bottom: 30px;
@@ -85,6 +104,10 @@ input[type="email"],input[type="password"] {
   margin: 0 30px;
 }
 
+.board-submit {
+  margin: 0 30px;
+}
+
 .flash {
   margin-left: 30px;
   font-size: 20px;
@@ -95,4 +118,100 @@ input[type="email"],input[type="password"] {
 }
 .notice {
   color: blue;
+}
+
+form {
+  margin: 0 auto;
+}
+
+.text-field {
+  width: 100%;
+  margin: 8px 0px;
+  padding: 16px 24px;
+  border: 1px solid #EBEBEB;
+  background: #F4F4F4;
+}
+
+.text-area {
+  width: 100%;
+  margin: 30px 0px;
+  padding: 60px 24px;
+  border: 1px solid #EBEBEB;
+  background: #F4F4F4;
+}
+
+.board {
+  margin:0 70px 30px;
+  font-size: 30px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 120px 70px;
+  background: #F4F4F4;
+  position: relative;
+}
+
+.add-new-borad {
+  margin:0 70px 50px;
+  font-size: 30px;
+  text-align: center;
+  border: 3px dashed rgba(0, 0, 0, 0.2);
+  padding: 120px 70px;
+}
+
+.board-title {
+  font-size: 34px;
+  color: #000000;
+  position: absolute;
+  left: 3%;
+  top: 35px;
+}
+
+.board-detail {
+  font-size: 22px;
+  color: gray;
+  position: absolute;
+  left: 3%;
+  top: 100px;
+}
+
+.dropbtn {
+  border: none;
+  position: absolute;
+  top: -80px; 
+  right: -450px; 
+  margin-right: auto;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110px; 
+  right: 530px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-weight: normal;
+  display: none;
+  top: -70px; 
+  right: -470px; 
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-colors: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
