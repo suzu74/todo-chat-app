@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="section-title"><%= @task.title %></h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <div class="board">
+    <% if @task.eyecatch.attached? %>
+      <div>
+        <%= image_tag @task.eyecatch, class: "task-image" %>
+      </div>
+    <% end %>
+    <div class="board_content">
+      <div class="board-detail">
+        <p class="board-description"><%= @task.content %></p>
+      </div>
+      <div class="image-content">
+        <%= image_tag @task.user.avatar_image %>
+      </div>
+    </div>
+    <% if user_signed_in? && current_user.tasks.exists?(id: @task.id) %>
+      <div class="board_detail_actions">
+        <div class="dropdown">
+          <%= image_tag 'actions.svg', class: 'dropbtn' %>
+          <div class="dropdown-content mini">
+            <%= link_to "edit", edit_board_task_path(@board.id, @task) %>
+            <%= link_to "delete", board_task_path(@board.id, @task), data: { method: 'delete', confirm: '本当に削除しますか？' } %>
+          </div>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+</div>

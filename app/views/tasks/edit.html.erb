@@ -1,0 +1,28 @@
+<div class="container">
+  <h2 class="section-title">Edit Card</h2>
+  <ul>
+    <% @task.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+	<%= form_with(model: @task, url: board_task_path(@board.id, @task), local: true) do |f| %>
+		<div class="field">
+			<%= f.label :title,'Title' %>
+		</div>
+		<div class="field">
+			<%= f.text_field :title, class: 'text-field' %>
+		</div>
+		<div class="field">
+			<%= f.label :content,'Content' %>
+		</div>
+		<div class="field">
+			<%= f.text_area :content, class: 'text-area' %>
+		</div>
+    	<div class="field">
+			<%= f.file_field :eyecatch %>
+		</div>
+		<div class="board-submit">
+			<%= f.submit 'Submit', class: 'btn-submit' %>
+		</div>
+	<% end %>
+</div>

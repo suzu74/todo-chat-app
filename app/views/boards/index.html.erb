@@ -3,7 +3,7 @@
 
  <% if @boards.present? %>
   <% @boards.each do |board| %>
-    <%= link_to board_path(board) do %>
+    <%= link_to board_tasks_path(board) do %>
       <div class="board">
         <div class="board_content">
           <div class="board-title">
