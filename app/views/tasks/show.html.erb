@@ -6,6 +6,11 @@
     <% end %>
   </ul>
   <div class="board">
+    <% if @task.eyecatch.attached? %>
+      <div>
+        <%= image_tag @task.eyecatch, class: "task-image" %>
+      </div>
+    <% end %>
     <div class="board_content">
       <div class="board-detail">
         <p class="board-description"><%= @task.content %></p>

@@ -199,6 +199,17 @@ form {
   top: 150px;
 }
 
+.task-image {
+  height: 75%;
+  width: 50% ;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  right: 25%;
+  overflow: hidden;
+  background-size: contain;
+}
+
 .dropbtn {
   border: none;
   position: absolute;
